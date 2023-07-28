@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MyLaptop: MonoBehaviour {
-    static int keySize = 50;
+    static int keySize = Screen.width / 20;
     static int keySpacing = (int) (0.15f * keySize);
     static KeyCode[] Keyboard = new KeyCode[] { KeyCode.Escape, KeyCode.F1, KeyCode.F2, KeyCode.F3, KeyCode.F4, KeyCode.F5, KeyCode.F6, KeyCode.F7, KeyCode.F8, KeyCode.F9, KeyCode.F10, KeyCode.F11, KeyCode.F12, KeyCode.Delete,
         KeyCode.BackQuote, KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9, KeyCode.Alpha0, KeyCode.Minus, KeyCode.Equals, KeyCode.Backspace,
@@ -45,6 +45,8 @@ public class MyLaptop: MonoBehaviour {
 
     bool[] keystate = new bool[Keyboard.Length];
     void OnGUI() {
+
+        keySize = Screen.width / 20;
 
         int startingX = (int) (Screen.width * 0.5f - (keySize * 15 + keySpacing * 14) * 0.5f);
         int startingY = (int) (Screen.height * 0.5f - (keySize * 7 + keySpacing * 6) * 0.5f);
